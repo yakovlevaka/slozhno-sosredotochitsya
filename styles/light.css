@@ -5,8 +5,18 @@
 */
 
 .page.theme_light {
+    --bg-color:#FFF1F7;
+    --color:#353430;
+    --accent-color: #FF8DCB;
+    --second-accent-color:#353430;
+    --main-font: IBM Plex Mono;
+    --title-color:#FFC2E6;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+
+.theme_light .hidden__decoration {
+  display: none;
 }
