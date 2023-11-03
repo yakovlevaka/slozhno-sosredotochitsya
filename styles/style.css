@@ -179,8 +179,7 @@
   object-position: center;
 }
 @media (width >= 768px) {
-  .header
-  {
+  .header {
     --padding-zone: 20px;
     padding: var(--padding-zone, 20px);
   }
@@ -195,6 +194,7 @@
     inset-block-start: 21px;
   }
   .page__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     position: relative;
     inset-inline-start: -20px;
   }
@@ -256,5 +256,8 @@
   .page__title {
     --accent-color: #ff0070;
     text-shadow: 4px 4px 0 var(--accent-color);
+  }
+  .what__reasons .reasons__item {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
