@@ -139,7 +139,7 @@
   margin-block: var(--margin-block-main);
   padding-inline: var(--padding-zone);
 }
-.reasons {
+.reasons,.reasons__item {
   display: grid;
   gap: 20px;
 }
@@ -189,6 +189,10 @@
     inset-inline-end: 49px;
     inset-block-start: 21px;
   }
+  .page__title {
+    position: relative;
+    inset-inline-start: -20px;
+  }
   .main {
     --margin-block-main: 60px;
     --gap-main: 80px;
@@ -199,9 +203,7 @@
   .how__reasons {
     grid-template-columns: 1fr 2fr;
   }
-  .title__reasons:first-of-type {
-    grid-row-end: span 6;
-  }
+ 
   .header__text {
     max-inline-size: 364px;
   }
