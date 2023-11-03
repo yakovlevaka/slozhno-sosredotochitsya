@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--bg-color);
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
@@ -146,6 +147,7 @@
 
 .title__reasons {
   font-size: inherit;
+  line-height:1.3;
 }
 
 .reasons__text {
@@ -177,12 +179,15 @@
   object-position: center;
 }
 @media (width >= 768px) {
-  .header,
-  .footer,
-  .main {
+  .header
+  {
     --padding-zone: 20px;
-    padding-inline: var(--padding-zone, 20px);
-    padding-block-start: var(--padding-zone, 20px);
+    padding: var(--padding-zone, 20px);
+  }
+  .footer {
+    --padding-zone: 20px;
+    padding-inline: var(--padding-zone,20px);
+    padding-block-end: var(--padding-zone,20px);
   }
   .hidden__decoration {
     display: none;
@@ -196,6 +201,8 @@
   .main {
     --margin-block-main: 60px;
     --gap-main: 80px;
+   --padding-zone: 20px;
+    padding-inline: var(--padding-zone, 20px);
     margin-block: var(--margin-block-main, 60px);
     gap: var(--gap-main, 80px);
   }
