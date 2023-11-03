@@ -148,14 +148,11 @@
   margin-block: var(--margin-block-main);
   padding-inline: var(--padding-zone);
 }
-.reasons {
+.reasons, .why__reasons {
   display: grid;
   gap: 20px;
 }
-.why__reasons {
-  display: grid;
-  gap: 10px;
-}
+
 .reasons__item {
   display: grid;
   gap: 20px;
@@ -265,6 +262,9 @@
   .page__title {
     --accent-color: #ff0070;
     text-shadow: 4px 4px 0 var(--accent-color);
+  }
+  .why__reasons {
+    gap: 10px;
   }
   .what__reasons .reasons__item {
     grid-template-columns: repeat(3, 1fr);
