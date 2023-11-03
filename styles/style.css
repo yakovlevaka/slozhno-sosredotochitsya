@@ -194,9 +194,9 @@
     inset-block-start: 21px;
   }
   .page__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     position: relative;
     inset-inline-start: -20px;
+    font-size:  clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   .main {
     --margin-block-main: 60px;
@@ -259,5 +259,8 @@
   }
   .what__reasons .reasons__item {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery {
+    grid-template-rows: min(260px, 26vi) min(315px, 31vi) min(428px, 42vi);
   }
 }
