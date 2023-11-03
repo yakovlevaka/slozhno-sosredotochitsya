@@ -1,5 +1,276 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  color: var(--color);
+  font-family: var(--main-font, IBM Plex Mono, Courier, sans-serif);
+  font-size: var(--main-font-size);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  align-items: end;
+  min-block-size:668px;
+  block-size: 100vb;
+  padding-inline: var(--padding-zone, 10px);
+}
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: end;
+  min-block-size:668px;
+  block-size: 100vb;
+  padding-inline: var(--padding-zone, 10px);
+}
+.decorated-zone::before,
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  block-size: 25px;
+  inline-size: 25px;
+}
+.decorated-zone::before {
+  inset-inline-start: var(--padding-zone, 10px);
+  inset-block-end: var(--padding-zone, 10px);
+  border-inline-start: 1px solid var(--second-accent-color);
+  border-block-end: 1px solid var(--second-accent-color);
+}
+.decorated-zone::after {
+  inset-block-start: var(--padding-zone, 10px);
+  inset-inline-end: var(--padding-zone, 10px);
+  border-block-start: 1px solid var(--second-accent-color);
+  border-inline-end: 1px solid var(--second-accent-color);
+}
+
+.hidden__decoration {
+  position: absolute;
+  display: none;
+  inset-inline-end: 39px;
+  inset-block-start: 11px;
+  color: var(--accent-color);
+  font: inherit;
+  line-height: 1.38;
+  text-transform: uppercase;
+}
+
+.hidden__decoration::after {
+  position: absolute;
+  inset-inline-end: -20px;
+  inset-block-start: 9px;
+  content: "";
+  inline-size: 7px;
+  block-size: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+.header__theme-menu {
+  align-self: center;
+}
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+  justify-content: end;
+}
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  color: var(--second-accent-color);
+  text-align: center;
+  padding-inline: 13px;
+  cursor:pointer;
+}
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+  cursor:none;
+}
+.header__theme-menu-button:hover {
+  outline: 1px solid currentColor;
+}
+.header__theme-menu-button:focus {
+  outline: none;
+}
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+}
+.page__title {
+  font-family: inherit;
+  font-size: var(--font-size_header);
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: var(--title-line-height);
+  text-align: left;
+  align-self: self-start;
+}
+.page__title-footer {
+  font-family: inherit;
+  font-size: var(--font-size_header);
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  align-self: center;
+  text-align: center;
+}
+.header__text {
+  justify-self: end;
+  align-self: center;
+  max-block-size: 117px;
+}
+.title__decor {
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: inherit;
+  color: var(--second-accent-color);
+}
+.text__decor-no-bold {
+  font-weight: 400;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-main, 50px);
+  margin-block: var(--margin-block-main);
+  padding-inline: var(--padding-zone);
+}
+.reasons, .why__reasons {
+  display: grid;
+  gap: 20px;
+}
+
+.reasons__item {
+  display: grid;
+  gap: 20px;
+}
+.title__reasons {
+  font-size: inherit;
+  line-height:1.3;
+}
+
+.reasons__text {
+  line-height: 1.3;
+  padding-block-start: 10px;
+}
+.text__link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+  cursor: pointer;
+}
+.text__link:hover {
+  border-block-end: 1px solid currentColor;
+}
+.text__link:focus {
+  outline: none;
+}
+.text__link:focus-visible {
+  outline: 1px solid currentColor;
+}
+.gallery {
+  gap: 10px;
+}
+.image__item {
+  inline-size: 100%;
+  min-block-size: 142px;
+  object-fit: contain;
+  object-position: center;
+}
+@media (width >= 768px) {
+  .header {
+    padding: var(--padding-zone, 20px);
+  }
+  .footer {
+    padding-inline: var(--padding-zone,20px);
+    padding-block-end: var(--padding-zone,20px);
+  }
+  .hidden__decoration {
+    display: none;
+    inset-inline-end: 49px;
+    inset-block-start: 21px;
+  }
+  .page__title {
+    position: relative;
+    inset-inline-start: -20px;
+    font-size:  var(--font-size_header);
+  }
+  .main {
+    padding-inline: var(--padding-zone, 20px);
+    margin-block: var(--margin-block-main, 60px);
+    gap: var(--gap-main, 80px);
+  }
+  .why__reasons,
+  .how__reasons {
+    grid-template-columns: 1fr 2fr;
+  }
+ 
+  .header__text {
+    max-inline-size: 364px;
+  }
+  .what__reasons .title__reasons {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  .gallery {
+    display: grid;
+    gap:20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min(192px, 26vi) min(230px, 31vi) min(318px, 42vi);
+  }
+
+  .image__item {
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .image__item:first-of-type,
+  .image__item:last-of-type {
+    grid-column-end: span 2;
+  }
+
+  .image__item:nth-of-type(2),
+  .image__item:nth-of-type(3) {
+    grid-row-end: span 2;
+  }
+}
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: start;
+  }
+  .header__theme-menu-list {
+    display: flex;
+    justify-content: center;
+  }
+  .header__text {
+    max-inline-size: 491px;
+  }
+  .page__title {
+    --accent-color: #ff0070;
+    text-shadow: 4px 4px 0 var(--accent-color);
+  }
+  .why__reasons {
+    gap: 10px;
+  }
+  .what__reasons .reasons__item {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery {
+    grid-row-gap:25px;
+    grid-template-rows: min(260px, 26vi) min(315px, 31vi) min(428px, 42vi);
+  }
 }
