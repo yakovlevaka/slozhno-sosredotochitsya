@@ -1,6 +1,7 @@
 :root {
   --bg-image: url(../images/cover-image-light.png);
   --color:#353430;
+  --bg-color: #FFF1F7;
   --accent-color: #FF8DCB;
   --second-accent-color:#353430;
   --main-font: IBM Plex Mono;
