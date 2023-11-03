@@ -33,3 +33,6 @@
   border-block-start: 1px solid var(--accent-color);
   border-inline-end: 1px solid var(--accent-color);
 }
+.theme_dark .title__reasons {
+  color: var(--accent-color);
+}
